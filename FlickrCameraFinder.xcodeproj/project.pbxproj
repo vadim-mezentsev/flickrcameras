@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE9B13C9237D81380003EE01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13C8237D81380003EE01 /* AppDelegate.swift */; };
 		CE9B13CB237D81380003EE01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13CA237D81380003EE01 /* SceneDelegate.swift */; };
-		CE9B13CD237D81390003EE01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13CC237D81390003EE01 /* ViewController.swift */; };
+		CE9B13CD237D81390003EE01 /* BrandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13CC237D81390003EE01 /* BrandsViewController.swift */; };
 		CE9B13D0237D81390003EE01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13CE237D81390003EE01 /* Main.storyboard */; };
 		CE9B13D2237D813B0003EE01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13D1237D813B0003EE01 /* Assets.xcassets */; };
 		CE9B13D5237D813B0003EE01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13D3237D813B0003EE01 /* LaunchScreen.storyboard */; };
@@ -20,13 +20,14 @@
 		CE9B13E7237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E6237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift */; };
 		CE9B13E9237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E8237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift */; };
 		CE9B13EB237E9F0C0003EE01 /* ContentInside.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */; };
+		CE9B13EF237ECB2C0003EE01 /* BrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13ED237ECB2C0003EE01 /* BrandTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE9B13C5237D81380003EE01 /* FlickrCameraFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrCameraFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9B13C8237D81380003EE01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE9B13CA237D81380003EE01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE9B13CC237D81390003EE01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE9B13CC237D81390003EE01 /* BrandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsViewController.swift; sourceTree = "<group>"; };
 		CE9B13CF237D81390003EE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE9B13D1237D813B0003EE01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9B13D4237D813B0003EE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		CE9B13E6237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCamerasBrandsResponse.swift; sourceTree = "<group>"; };
 		CE9B13E8237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCamerasBrandModelsResponse.swift; sourceTree = "<group>"; };
 		CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInside.swift; sourceTree = "<group>"; };
+		CE9B13ED237ECB2C0003EE01 /* BrandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +75,7 @@
 				CE9B13C8237D81380003EE01 /* AppDelegate.swift */,
 				CE9B13CA237D81380003EE01 /* SceneDelegate.swift */,
 				CE9B13E4237E9E110003EE01 /* Service */,
-				CE9B13CC237D81390003EE01 /* ViewController.swift */,
+				CE9B13EC237EC9A60003EE01 /* BrandsViewController */,
 				CE9B13CE237D81390003EE01 /* Main.storyboard */,
 				CE9B13D1237D813B0003EE01 /* Assets.xcassets */,
 				CE9B13D3237D813B0003EE01 /* LaunchScreen.storyboard */,
@@ -102,6 +104,23 @@
 				CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CE9B13EC237EC9A60003EE01 /* BrandsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B13F3237ECBC00003EE01 /* Cell */,
+				CE9B13CC237D81390003EE01 /* BrandsViewController.swift */,
+			);
+			path = BrandsViewController;
+			sourceTree = "<group>";
+		};
+		CE9B13F3237ECBC00003EE01 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B13ED237ECB2C0003EE01 /* BrandTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,13 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9B13CD237D81390003EE01 /* ViewController.swift in Sources */,
+				CE9B13CD237D81390003EE01 /* BrandsViewController.swift in Sources */,
 				CE9B13E3237DB2A40003EE01 /* NetworkError.swift in Sources */,
 				CE9B13DF237D840C0003EE01 /* FlickrUrlHelper.swift in Sources */,
 				CE9B13C9237D81380003EE01 /* AppDelegate.swift in Sources */,
 				CE9B13E7237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift in Sources */,
 				CE9B13DD237D83E40003EE01 /* NetworkService.swift in Sources */,
 				CE9B13E9237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift in Sources */,
+				CE9B13EF237ECB2C0003EE01 /* BrandTableViewCell.swift in Sources */,
 				CE9B13CB237D81380003EE01 /* SceneDelegate.swift in Sources */,
 				CE9B13E1237DA0DB0003EE01 /* FlickrResponse.swift in Sources */,
 				CE9B13EB237E9F0C0003EE01 /* ContentInside.swift in Sources */,
