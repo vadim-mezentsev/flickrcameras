@@ -9,10 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let networkService = NetworkService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+//        networkService.fetchCameraBrands { result in
+//            switch result {
+//            case .success(let cameraBrands):
+//                print(cameraBrands)
+//            case .failure(let error):
+//                print(error.message)
+//            }
+//        }
+        
+        networkService.fetchCameraModels(for: "apple") { result in
+            switch result {
+            case .success(let cameraBrands):
+                print(cameraBrands)
+            case .failure(let error):
+                print(error.message)
+            }
+        }
     }
 
 

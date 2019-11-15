@@ -13,6 +13,13 @@
 		CE9B13D0237D81390003EE01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13CE237D81390003EE01 /* Main.storyboard */; };
 		CE9B13D2237D813B0003EE01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13D1237D813B0003EE01 /* Assets.xcassets */; };
 		CE9B13D5237D813B0003EE01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9B13D3237D813B0003EE01 /* LaunchScreen.storyboard */; };
+		CE9B13DD237D83E40003EE01 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13DC237D83E40003EE01 /* NetworkService.swift */; };
+		CE9B13DF237D840C0003EE01 /* FlickrUrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13DE237D840C0003EE01 /* FlickrUrlHelper.swift */; };
+		CE9B13E1237DA0DB0003EE01 /* FlickrResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E0237DA0DB0003EE01 /* FlickrResponse.swift */; };
+		CE9B13E3237DB2A40003EE01 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E2237DB2A40003EE01 /* NetworkError.swift */; };
+		CE9B13E7237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E6237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift */; };
+		CE9B13E9237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13E8237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift */; };
+		CE9B13EB237E9F0C0003EE01 /* ContentInside.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		CE9B13D1237D813B0003EE01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9B13D4237D813B0003EE01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9B13D6237D813B0003EE01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9B13DC237D83E40003EE01 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CE9B13DE237D840C0003EE01 /* FlickrUrlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrUrlHelper.swift; sourceTree = "<group>"; };
+		CE9B13E0237DA0DB0003EE01 /* FlickrResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrResponse.swift; sourceTree = "<group>"; };
+		CE9B13E2237DB2A40003EE01 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CE9B13E6237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCamerasBrandsResponse.swift; sourceTree = "<group>"; };
+		CE9B13E8237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCamerasBrandModelsResponse.swift; sourceTree = "<group>"; };
+		CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentInside.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,7 @@
 			children = (
 				CE9B13C8237D81380003EE01 /* AppDelegate.swift */,
 				CE9B13CA237D81380003EE01 /* SceneDelegate.swift */,
+				CE9B13E4237E9E110003EE01 /* Service */,
 				CE9B13CC237D81390003EE01 /* ViewController.swift */,
 				CE9B13CE237D81390003EE01 /* Main.storyboard */,
 				CE9B13D1237D813B0003EE01 /* Assets.xcassets */,
@@ -65,6 +80,28 @@
 				CE9B13D6237D813B0003EE01 /* Info.plist */,
 			);
 			path = FlickrCameraFinder;
+			sourceTree = "<group>";
+		};
+		CE9B13E4237E9E110003EE01 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B13E5237E9E220003EE01 /* Model */,
+				CE9B13DC237D83E40003EE01 /* NetworkService.swift */,
+				CE9B13DE237D840C0003EE01 /* FlickrUrlHelper.swift */,
+				CE9B13E2237DB2A40003EE01 /* NetworkError.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		CE9B13E5237E9E220003EE01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B13E0237DA0DB0003EE01 /* FlickrResponse.swift */,
+				CE9B13E6237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift */,
+				CE9B13E8237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift */,
+				CE9B13EA237E9F0C0003EE01 /* ContentInside.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +176,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9B13CD237D81390003EE01 /* ViewController.swift in Sources */,
+				CE9B13E3237DB2A40003EE01 /* NetworkError.swift in Sources */,
+				CE9B13DF237D840C0003EE01 /* FlickrUrlHelper.swift in Sources */,
 				CE9B13C9237D81380003EE01 /* AppDelegate.swift in Sources */,
+				CE9B13E7237E9E9A0003EE01 /* FlickrCamerasBrandsResponse.swift in Sources */,
+				CE9B13DD237D83E40003EE01 /* NetworkService.swift in Sources */,
+				CE9B13E9237E9EC30003EE01 /* FlickrCamerasBrandModelsResponse.swift in Sources */,
 				CE9B13CB237D81380003EE01 /* SceneDelegate.swift in Sources */,
+				CE9B13E1237DA0DB0003EE01 /* FlickrResponse.swift in Sources */,
+				CE9B13EB237E9F0C0003EE01 /* ContentInside.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vm.FlickrCameraFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = vm.FlickrCameraFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
