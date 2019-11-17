@@ -16,9 +16,15 @@ class BrandsViewController: UIViewController {
     
     private var filteredBrands = [FlickrCameraBrand]() {
         didSet {
-            self.table.reloadData()
+            self.tableView.reloadData()
         }
     }
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -35,19 +41,17 @@ class BrandsViewController: UIViewController {
         return activityIndicator
     }()
     
-    @IBOutlet private weak var table: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
         setupTableView()
-        setupNavigationBar()
         setupActivityIndicator()
-        
         fetchBrands()
     }
     
-    private func setupNavigationBar() {
+    private func setupView() {
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Brands"
         navigationItem.searchController = searchController
@@ -61,10 +65,16 @@ class BrandsViewController: UIViewController {
     }
     
     private func setupTableView() {
-        table.delegate = self
-        table.dataSource = self
-        table.register(BrandTableViewCell.self, forCellReuseIdentifier: BrandTableViewCell.reuseId)
-        table.rowHeight = 50
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(BrandTableViewCell.self, forCellReuseIdentifier: BrandTableViewCell.reuseId)
+        
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        tableView.rowHeight = 50
     }
     
     private func fetchBrands() {

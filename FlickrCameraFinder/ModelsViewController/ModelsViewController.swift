@@ -34,17 +34,16 @@ class ModelsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
+        setupView()
         setupTableView()
-        setupNavigationBar()
         setupActivityIndicator()
         
         fetchModels()
     }
     
-    private func setupNavigationBar() {
+    private func setupView() {
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Models"
     }
@@ -61,7 +60,6 @@ class ModelsViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ModelTableViewCell", bundle: nil), forCellReuseIdentifier: ModelTableViewCell.reuseId)
         tableView.register(UINib(nibName: "DetailModelTableViewCell", bundle: nil), forCellReuseIdentifier: DetailModelTableViewCell.reuseId)
-        //tableView.register(ModelTableViewCell.self, forCellReuseIdentifier: ModelTableViewCell.reuseId)
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
