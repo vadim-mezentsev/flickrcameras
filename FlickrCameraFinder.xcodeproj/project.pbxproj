@@ -107,6 +107,18 @@
 			path = DetailModelTableViewCell;
 			sourceTree = "<group>";
 		};
+		CE371D202381899A00D2669C /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B13C8237D81380003EE01 /* AppDelegate.swift */,
+				CE9B13CA237D81380003EE01 /* SceneDelegate.swift */,
+				CE9B13D1237D813B0003EE01 /* Assets.xcassets */,
+				CE9B13D3237D813B0003EE01 /* LaunchScreen.storyboard */,
+				CE9B13D6237D813B0003EE01 /* Info.plist */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
 		CE9B13BC237D81380003EE01 = {
 			isa = PBXGroup;
 			children = (
@@ -126,15 +138,11 @@
 		CE9B13C7237D81380003EE01 /* FlickrCameraFinder */ = {
 			isa = PBXGroup;
 			children = (
-				CE9B13C8237D81380003EE01 /* AppDelegate.swift */,
-				CE9B13CA237D81380003EE01 /* SceneDelegate.swift */,
+				CE371D202381899A00D2669C /* Supporting */,
 				CE9B13E4237E9E110003EE01 /* Service */,
 				CE9B13EC237EC9A60003EE01 /* BrandsViewController */,
 				CE371D0D237EEF2900D2669C /* ModelsViewController */,
 				CE371D172381646E00D2669C /* Extension */,
-				CE9B13D1237D813B0003EE01 /* Assets.xcassets */,
-				CE9B13D3237D813B0003EE01 /* LaunchScreen.storyboard */,
-				CE9B13D6237D813B0003EE01 /* Info.plist */,
 			);
 			path = FlickrCameraFinder;
 			sourceTree = "<group>";
