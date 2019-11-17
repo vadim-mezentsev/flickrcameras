@@ -75,10 +75,8 @@
 		CE371D10237EF40F00D2669C /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				CE371D11237EF44A00D2669C /* ModelTableViewCell.swift */,
-				CE371D14237F01C300D2669C /* ModelTableViewCell.xib */,
-				CE371D1A23816B4E00D2669C /* DetailModelTableViewCell.swift */,
-				CE371D1B23816B4E00D2669C /* DetailModelTableViewCell.xib */,
+				CE371D1E238188B700D2669C /* ModelTableViewCell */,
+				CE371D1F238188C800D2669C /* DetailModelTableViewCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -89,6 +87,24 @@
 				CE371D182381648D00D2669C /* UIImageView + extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CE371D1E238188B700D2669C /* ModelTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE371D11237EF44A00D2669C /* ModelTableViewCell.swift */,
+				CE371D14237F01C300D2669C /* ModelTableViewCell.xib */,
+			);
+			path = ModelTableViewCell;
+			sourceTree = "<group>";
+		};
+		CE371D1F238188C800D2669C /* DetailModelTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CE371D1A23816B4E00D2669C /* DetailModelTableViewCell.swift */,
+				CE371D1B23816B4E00D2669C /* DetailModelTableViewCell.xib */,
+			);
+			path = DetailModelTableViewCell;
 			sourceTree = "<group>";
 		};
 		CE9B13BC237D81380003EE01 = {

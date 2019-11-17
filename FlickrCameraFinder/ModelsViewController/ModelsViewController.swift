@@ -58,8 +58,8 @@ class ModelsViewController: UIViewController {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "ModelTableViewCell", bundle: nil), forCellReuseIdentifier: ModelTableViewCell.reuseId)
-        tableView.register(UINib(nibName: "DetailModelTableViewCell", bundle: nil), forCellReuseIdentifier: DetailModelTableViewCell.reuseId)
+        tableView.register(ModelTableViewCell.nib, forCellReuseIdentifier: ModelTableViewCell.reuseId)
+        tableView.register(DetailModelTableViewCell.nib, forCellReuseIdentifier: DetailModelTableViewCell.reuseId)
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
