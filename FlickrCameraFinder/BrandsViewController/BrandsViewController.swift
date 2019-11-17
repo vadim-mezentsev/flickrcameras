@@ -86,7 +86,7 @@ class BrandsViewController: UIViewController {
                     self?.filteredBrands = cameraBrands.brands!.brand
                 case .failure(let error):
                     print(error.message)
-                    // TODO: show alert
+                    self?.informAlert(title: "Error", message: error.message, handler: nil)
                 }
                 self?.activityIndicator.stopAnimating()
                 self?.activityIndicator.isHidden = true
