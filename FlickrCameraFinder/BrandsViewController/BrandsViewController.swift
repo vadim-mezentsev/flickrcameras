@@ -10,11 +10,11 @@ import UIKit
 
 class BrandsViewController: UIViewController {
     
-    let networkService = NetworkService()
+    private let networkService = NetworkService()
     
-    var brands = [FlickrCameraBrand]()
+    private var brands = [FlickrCameraBrand]()
     
-    var filteredBrands = [FlickrCameraBrand]() {
+    private var filteredBrands = [FlickrCameraBrand]() {
         didSet {
             self.table.reloadData()
         }
@@ -96,7 +96,7 @@ extension BrandsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: BrandTableViewCell.reuseId) as! BrandTableViewCell
         let brandName = filteredBrands[indexPath.row].name
         let cellModel = BrandTableViewCellModel(brandName: brandName)
-        cell.setup(from: cellModel)
+        cell.set(from: cellModel)
         return cell
     }
 }
@@ -104,7 +104,15 @@ extension BrandsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension BrandsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let brandId = brands[indexPath.row].id
+        
+        let ModelsViewControler = ModelsViewController()
+        ModelsViewControler.brandId = brandId
+        
+        navigationController?.pushViewController(ModelsViewControler, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }
 
 // MARK: - UISearchBarDelegate

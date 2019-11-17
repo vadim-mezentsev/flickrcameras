@@ -6,8 +6,8 @@
 //  Copyright © 2019 Vadim Mezentsev. All rights reserved.
 //
 
-struct ContentInside: Decodable {
-    let content: String
+struct ContentInside<T: Decodable>: Decodable {
+    let content: T
     
     enum CodingKeys: String, CodingKey {
       case content = "_content"
@@ -15,6 +15,6 @@ struct ContentInside: Decodable {
     
     init(from decoder: Decoder) throws {
       let container = try decoder.container(keyedBy: CodingKeys.self)
-        content = try container.decode(String.self, forKey: .content)
+        content = try container.decode(T.self, forKey: .content)
     }
 }

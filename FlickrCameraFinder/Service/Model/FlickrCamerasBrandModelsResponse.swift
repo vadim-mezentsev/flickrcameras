@@ -20,18 +20,18 @@ struct FlickrCameras: Decodable {
 
 struct FlickrCamera: Decodable {
     let id: String
-    let name: ContentInside
+    let name: ContentInside<String>
     let details: FlickrCameraDetails?
     let images: FlickrCameraImages?
 }
 
 struct FlickrCameraDetails: Decodable {
-    let megapixels: ContentInside?
-    let lcdScreenSize: ContentInside?
-    let memoryType: ContentInside?
+    let megapixels: ContentInside<String>?
+    let lcdScreenSize: ContentInside<String>?
+    let memoryType: ContentInside<String>?
 }
 
 struct FlickrCameraImages: Decodable {
-    let small: ContentInside?
-    let large: ContentInside?
+    let small: ContentInside<String>?
+    let large: ContentInside<String>?
 }

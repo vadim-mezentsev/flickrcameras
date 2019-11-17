@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="129" id="KGk-i7-Jjw" customClass="ModelTableViewCell" customModule="FlickrCameraFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="446" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="446" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oho-ul-uLo">
+                        <rect key="frame" x="5" y="5" width="436" height="119"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-8D-WYp">
+                                <rect key="frame" x="0.0" y="22.5" width="75" height="73"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DgA-8D-WYp" secondAttribute="height" multiplier="1:1" id="4Yp-ZR-dyu"/>
+                                    <constraint firstAttribute="width" constant="75" id="ajn-aL-7Gg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vM-Sv-hF1">
+                                <rect key="frame" x="90" y="49" width="346" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oho-ul-uLo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="1vX-1d-OAD"/>
+                    <constraint firstItem="oho-ul-uLo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6TS-Vc-d2s"/>
+                    <constraint firstAttribute="trailing" secondItem="oho-ul-uLo" secondAttribute="trailing" constant="5" id="Faq-nu-Vbb"/>
+                    <constraint firstAttribute="bottom" secondItem="oho-ul-uLo" secondAttribute="bottom" constant="5" id="IUq-lk-Zv2"/>
+                    <constraint firstItem="oho-ul-uLo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="aIc-0M-FBN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cameraImageView" destination="DgA-8D-WYp" id="uZ0-PD-mg1"/>
+                <outlet property="titleLabel" destination="2vM-Sv-hF1" id="SBh-HW-qzE"/>
+            </connections>
+            <point key="canvasLocation" x="213.04347826086959" y="161.04910714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+    </resources>
+</document>

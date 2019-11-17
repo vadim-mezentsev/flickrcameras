@@ -34,7 +34,7 @@ class BrandTableViewCell: UITableViewCell {
         setupLabel()
     }
     
-    func setup(from model: BrandTableViewCellModel) {
+    func set(from model: BrandTableViewCellModel) {
         label.text = model.brandName
     }
     
