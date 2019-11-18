@@ -18,6 +18,11 @@ class FlickrUrlHelper {
         case brand = "brand"
     }
     
+    private enum MethodName: String {
+        case getBrands = "flickr.cameras.getBrands"
+        case getBrandModels = "flickr.cameras.getBrandModels"
+    }
+    
     private let scheme = "https"
     private let host = "api.flickr.com"
     private let rootPath = "/services/rest/"
@@ -40,14 +45,14 @@ class FlickrUrlHelper {
 
     func fetchCameraBrandsUrl() -> URL {
         var urlComponents = self.urlComponents
-        let methodName = "flickr.cameras.getBrands"
+        let methodName = MethodName.getBrands.rawValue
         urlComponents.queryItems?.append(URLQueryItem(name: QueryItemKey.method.rawValue, value: methodName))
         return urlComponents.url!
     }
     
     func fetchCameraModelsUrl(for brand: String) -> URL {
         var urlComponents = self.urlComponents
-        let methodName = "flickr.cameras.getBrandModels"
+        let methodName = MethodName.getBrandModels.rawValue
         urlComponents.queryItems?.append(URLQueryItem(name: QueryItemKey.method.rawValue, value: methodName))
         urlComponents.queryItems?.append(URLQueryItem(name: QueryItemKey.brand.rawValue, value: brand))
         return urlComponents.url!

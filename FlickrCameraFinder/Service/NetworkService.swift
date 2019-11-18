@@ -12,18 +12,43 @@ class NetworkService {
     
     private let urlHelper = FlickrUrlHelper()
     
-    func fetchCameraBrands(completion: @escaping (Result<FlickrCamerasBrandsResponse, NetworkError>) -> Void) {
-        fetchModel(FlickrCamerasBrandsResponse.self,from: urlHelper.fetchCameraBrandsUrl()){ (result) in
-            completion(result)
+    func fetchBrands(completionQueue: DispatchQueue, completion: @escaping (Result<FlickrBrandsResponse, NetworkError>) -> Void) {
+        fetchModel(FlickrBrandsResponse.self,from: urlHelper.fetchCameraBrandsUrl()){ (result) in
+            completionQueue.async {
+                completion(result)
+            }
         }
     }
     
-    func fetchCameraModels(for brand: String, completion: @escaping (Result<FlickrCamerasBrandModelsResponse, NetworkError>) -> Void) {
-        fetchModel(FlickrCamerasBrandModelsResponse.self,from: urlHelper.fetchCameraModelsUrl(for: brand)){ (result) in
-            completion(result)
+    func fetchCameras(completionQueue: DispatchQueue, for brands: [Brand], completion: @escaping (Result<[Camera], NetworkError>) -> Void) {
+        
+        var cameras = [Camera]()
+        let fetchDispatchGroup = DispatchGroup()
+        var error: NetworkError?
+        
+        brands.forEach { brand in
+            fetchDispatchGroup.enter()
+            fetchModel(FlickrCamerasResponse.self,from: urlHelper.fetchCameraModelsUrl(for: brand.id)) { result in
+                switch result {
+                case .success(let cameraModels):
+                    cameras.append(contentsOf: cameraModels.cameras!.camera)
+                case .failure(let currentError):
+                    print(currentError.message)
+                    error = currentError
+                }
+                fetchDispatchGroup.leave()
+            }
+        }
+        
+        fetchDispatchGroup.notify(queue: completionQueue) {
+            if error == nil {
+                completion(.success(cameras))
+            } else {
+                completion(.failure(error!))
+            }
         }
     }
-
+    
     private func fetchModel<T: FlickrResponse>(_ modelType: T.Type,from url: URL, completion: @escaping (Result<T, NetworkError>) -> Void) {
         request(url: url) { [weak self] (result) in
             
@@ -34,12 +59,13 @@ class NetworkService {
                     case .ok:
                         completion(.success(model))
                     case .fail:
-                        let flickrError = NetworkError(message: model.message!, type: .invalidJSON)
+                        let errorMessage = model.message ?? "Unknown flickr error."
+                        let flickrError = NetworkError(message: errorMessage, type: .flickrError)
                         completion(.failure(flickrError))
                         print(model.message!)
                     }
                 } else {
-                    let parsingError = NetworkError(message: "Error parsing JSON.", type: .flickrError)
+                    let parsingError = NetworkError(message: "Error parsing JSON.", type: .invalidJSON)
                     completion(.failure(parsingError))
                 }
             case .failure(let error):

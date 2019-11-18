@@ -6,18 +6,18 @@
 //  Copyright © 2019 Vadim Mezentsev. All rights reserved.
 //
 
-struct FlickrCamerasBrandsResponse: FlickrResponse {
+struct FlickrBrandsResponse: FlickrResponse {
     let stat: FlickrResponseStutus
     let code: Int?
     let message: String?
-    let brands: FlickrCameraBrands?
+    let brands: FlickrBrands?
 }
 
-struct FlickrCameraBrands: Decodable {
-    let brand: [FlickrCameraBrand]
+struct FlickrBrands: Decodable {
+    let brand: [Brand]
 }
 
-struct FlickrCameraBrand: Decodable {
+struct Brand: Decodable {
     let id: String
     let name: String
 }

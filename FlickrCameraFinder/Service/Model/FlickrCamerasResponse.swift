@@ -6,7 +6,7 @@
 //  Copyright © 2019 Vadim Mezentsev. All rights reserved.
 //
 
-struct FlickrCamerasBrandModelsResponse: FlickrResponse {
+struct FlickrCamerasResponse: FlickrResponse {
     let stat: FlickrResponseStutus
     let code: Int?
     let message: String?
@@ -15,23 +15,23 @@ struct FlickrCamerasBrandModelsResponse: FlickrResponse {
 
 struct FlickrCameras: Decodable {
     let brand: String
-    let camera: [FlickrCamera]
+    let camera: [Camera]
 }
 
-struct FlickrCamera: Decodable {
+struct Camera: Decodable {
     let id: String
     let name: ContentInside<String>
-    let details: FlickrCameraDetails?
-    let images: FlickrCameraImages?
+    let details: CameraDetails?
+    let images: CameraImages?
 }
 
-struct FlickrCameraDetails: Decodable {
+struct CameraDetails: Decodable {
     let megapixels: ContentInside<String>?
     let lcdScreenSize: ContentInside<String>?
     let memoryType: ContentInside<String>?
 }
 
-struct FlickrCameraImages: Decodable {
+struct CameraImages: Decodable {
     let small: ContentInside<String>?
     let large: ContentInside<String>?
 }
